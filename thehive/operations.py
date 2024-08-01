@@ -98,7 +98,7 @@ def create_alert(config, params):
 def get_alert(config, params):
     hive_obj = TheHive(config)
     alert_id = params.get('alertID')
-    endpoint = f'/v1/alert/{alert_id}'
+    endpoint = f'/api/v1/alert/{alert_id}'
     return hive_obj.make_api_call(endpoint, method='GET')
 
 

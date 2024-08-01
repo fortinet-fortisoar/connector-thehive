@@ -593,7 +593,7 @@
     {
       "title": "Delete Alert Attachment",
       "operation": "delete_alert_attachment",
-      "description": "delete a specific attachment associated with an alert in The Hive",
+      "description": "Delete a specific attachment associated with an alert in The Hive",
       "category": "investigation",
       "annotation": "delete_alert_attachment",
       "output_schema": {
@@ -605,8 +605,8 @@
           "title": "Alert ID",
           "name": "alertID",
           "type": "text",
-          "description": "Specify the ID of the alert which you want to retrieve attachment.",
-          "tooltip": "Specify the ID of the alert which you want to retrieve attachment",
+          "description": "Specify the ID of the alert which you want to delete alert attachment.",
+          "tooltip": "Specify the ID of the alert which you want to delete alert attachment",
           "visible": true,
           "editable": true,
           "required": true
@@ -796,7 +796,7 @@
     {
       "title": "Get Case",
       "operation": "get_case",
-      "description": "Retrieves a specific case information from the TheHive platform based on the input parameters you have specified.",
+      "description": "Retrieves a specific case information from the TheHive platform based on the Case ID you have specified.",
       "category": "investigation",
       "annotation": "get_case",
       "output_schema": {
@@ -992,7 +992,7 @@
     {
       "title": "Delete Case",
       "operation": "delete_case",
-      "description": "Delete a specific case from the TheHive platform based on the input parameters you have specified.",
+      "description": "Delete a specific case from the TheHive platform based on the Case ID you have specified.",
       "category": "investigation",
       "annotation": "delete_case",
       "output_schema": {
@@ -1480,8 +1480,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1492,8 +1492,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1504,8 +1504,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1516,8 +1516,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1528,8 +1528,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1540,8 +1540,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1552,8 +1552,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1564,8 +1564,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1576,8 +1576,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1588,8 +1588,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1600,8 +1600,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1612,8 +1612,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1624,8 +1624,8 @@
                 "title": "Data",
                 "name": "data",
                 "type": "text",
-                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
-                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "description": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a alert in The Hive Platform",
                 "visible": true,
                 "editable": true,
                 "required": true
@@ -1715,7 +1715,7 @@
     {
       "title": "Get Observable",
       "operation": "get_observable",
-      "description": "Retrieves a specific case information from the TheHive platform based on the input parameters you have specified.",
+      "description": "Retrieves a specific observable information from the TheHive platform based on the observable ID you have specified.",
       "category": "investigation",
       "annotation": "get_observable",
       "output_schema": {
@@ -1963,7 +1963,7 @@
     {
       "title": "Create Task in Case",
       "operation": "create_task",
-      "description": "Creates a task in the in TheHive based on the input parameters you have specified.",
+      "description": "Creates a task in the TheHive based on the input parameters you have specified.",
       "category": "investigation",
       "annotation": "create_task",
       "output_schema": {
@@ -2063,7 +2063,7 @@
     {
       "title": "Get Task",
       "operation": "get_task",
-      "description": "Retrieves information about a specific task from The Hive platform based on the input parameters you have specified.",
+      "description": "Retrieves information about a specific task from The Hive platform based on the task ID you have specified.",
       "category": "investigation",
       "annotation": "get_task",
       "output_schema": {
@@ -2217,7 +2217,7 @@
     {
       "title": "Delete Task",
       "operation": "delete_task",
-      "description": "Delete a specific task from the TheHive platform based on the input parameters you have specified.",
+      "description": "Delete a specific task from the TheHive platform based on the task ID you have specified.",
       "category": "investigation",
       "annotation": "delete_task",
       "output_schema": {
