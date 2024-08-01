@@ -66,7 +66,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": {
                   "observables": [
                     {
@@ -155,7 +155,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -233,7 +233,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -311,7 +311,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -389,7 +389,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -467,7 +467,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -545,7 +545,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -623,7 +623,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -701,7 +701,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -779,7 +779,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -857,7 +857,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -935,7 +935,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -1013,7 +1013,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -1091,7 +1091,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -1169,7 +1169,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -1247,7 +1247,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -1325,7 +1325,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -1403,7 +1403,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -1481,7 +1481,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -1559,7 +1559,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",
@@ -1637,7 +1637,7 @@
               "status": null,
               "arguments": {
                 "name": "TheHive",
-                "config": "''",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "thehive",

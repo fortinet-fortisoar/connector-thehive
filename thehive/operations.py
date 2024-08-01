@@ -128,7 +128,7 @@ def update_alerts(config, params):
 def delete_alert(config, params):
     hive_obj = TheHive(config)
     alert_id = params.get('alertID')
-    endpoint = f'/v1/alert/{alert_id}'
+    endpoint = f'/api/v1/alert/{alert_id}'
     return hive_obj.make_api_call(endpoint, method='DELETE')
 
 
@@ -140,7 +140,7 @@ def add_alert_attachment(config, params):
     if file_iri:
         filename, files_obj = get_file_object(file_iri)
     params = {k: v for k, v in params.items() if v is not None and v != ''}
-    endpoint = f'/v1/alert/{alert_id}/attachments'
+    endpoint = f'/api/v1/alert/{alert_id}/attachments'
     payload = json.dumps(params)
     return hive_obj.make_api_call(endpoint, method='POST', files=files_obj, payload=payload)
 
@@ -246,7 +246,7 @@ def create_observable_in_case(config, params):
 def create_observable_in_alert(config, params):
     hive_obj = TheHive(config)
     alert_id = params.get('alertID')
-    endpoint = f'/v1/alert/{alert_id}/observable'
+    endpoint = f'/api/v1/alert/{alert_id}/observable'
     payload, files_obj = build_observable_payload(params)
     return hive_obj.make_api_call(endpoint, payload=payload, files=files_obj)
 

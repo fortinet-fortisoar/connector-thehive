@@ -6,6 +6,7 @@
   "description": "The Hive Security Incident Response Platform involves connecting external security tools, systems, or data sources with The Hive's platform. This integration facilitates centralized incident management, response coordination, and automation, enhancing overall security operations by streamlining incident detection, investigation, and resolution processes.",
   "cs_approved": false,
   "cs_compatible": true,
+  "contributor": "",
   "publisher": "Fortinet",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
@@ -49,7 +50,7 @@
     {
       "title": "Create Alert",
       "operation": "create_alert",
-      "description": "Creates an alert in the in TheHive based on the input parameters you have specified.",
+      "description": "Creates an alert in TheHive based on the input parameters you have specified.",
       "category": "investigation",
       "annotation": "create_alert",
       "output_schema": {
@@ -297,7 +298,7 @@
     {
       "title": "Update Alerts",
       "operation": "update_alerts",
-      "description": "Update an alert in the in TheHive based on the input parameters you have specified.",
+      "description": "Update an alert in TheHive based on the input parameters you have specified.",
       "category": "investigation",
       "annotation": "update_alerts",
       "output_schema": {
