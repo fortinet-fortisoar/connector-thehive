@@ -1,0 +1,1668 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "a351ee22-77e6-403e-a907-c66dfc82093d",
+      "@type": "WorkflowCollection",
+      "name": "Sample - TheHive - 1.0.0",
+      "description": "The Hive Security Incident Response Platform involves connecting external security tools, systems, or data sources with The Hive's platform. This integration facilitates centralized incident management, response coordination, and automation, enhancing overall security operations by streamlining incident detection, investigation, and resolution processes.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Thehive",
+        "thehive"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "107b39ea-0cfd-4fa7-872b-571dac730a8b",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Creates an alert in the in TheHive based on the input parameters you have specified.",
+          "name": "Create Alert",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f13f2915-13e7-4e3d-81f7-12c37f3378e3",
+          "steps": [
+            {
+              "uuid": "f13f2915-13e7-4e3d-81f7-12c37f3378e3",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "6e6f22e1-1d60-4055-abab-02592d4804fd",
+                "title": "TheHive: Create Alert",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "64603a8b-8540-498d-9336-4ca6789c2847",
+              "@type": "WorkflowStep",
+              "name": "Create Alert",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": {
+                  "observables": [
+                    {
+                      "dataType": "url",
+                      "data": "http://example.org"
+                    },
+                    {
+                      "dataType": "mail",
+                      "data": "foo@example.org"
+                    }
+                  ]
+                },
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "create_alert",
+                "operationTitle": "Create Alert",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "45a655b4-c358-46a8-99b1-d7dd77423a51",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Alert",
+              "sourceStep": "/api/3/workflow_steps/f13f2915-13e7-4e3d-81f7-12c37f3378e3",
+              "targetStep": "/api/3/workflow_steps/64603a8b-8540-498d-9336-4ca6789c2847"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9dae7ef0-b76b-4e6f-a8b9-4530ee2b3a2d",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Retrieve detailed information of the specified alert based on its ID.",
+          "name": "Get Alert",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/786fcd03-a219-4f2c-9b2e-e384a2dc2b07",
+          "steps": [
+            {
+              "uuid": "786fcd03-a219-4f2c-9b2e-e384a2dc2b07",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "734c8da4-ca2b-43f5-bc4e-95e7e98d1c98",
+                "title": "TheHive: Get Alert",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "e353116d-98d4-460b-83a6-8f1a2bebf0f3",
+              "@type": "WorkflowStep",
+              "name": "Get Alert",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "get_alert",
+                "operationTitle": "Get Alert",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "4069911b-a1a2-4e80-82cb-d54d97e64167",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Alert",
+              "sourceStep": "/api/3/workflow_steps/786fcd03-a219-4f2c-9b2e-e384a2dc2b07",
+              "targetStep": "/api/3/workflow_steps/e353116d-98d4-460b-83a6-8f1a2bebf0f3"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "dcadbd95-f1b3-4189-8550-ce7b6900920a",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Update an alert in the in TheHive based on the input parameters you have specified.",
+          "name": "Update Alerts",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0ca34c1d-5ffd-4541-aac3-5ba0cd23a3e2",
+          "steps": [
+            {
+              "uuid": "0ca34c1d-5ffd-4541-aac3-5ba0cd23a3e2",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "50626de9-b43a-436a-9f02-3da2d905f0ec",
+                "title": "TheHive: Update Alerts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "200c82c7-3bbe-4eca-84c2-d6ee54abb8ab",
+              "@type": "WorkflowStep",
+              "name": "Update Alerts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "update_alerts",
+                "operationTitle": "Update Alerts",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "b4d58b81-c9b6-41a3-af22-58c98cd061ce",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Alerts",
+              "sourceStep": "/api/3/workflow_steps/0ca34c1d-5ffd-4541-aac3-5ba0cd23a3e2",
+              "targetStep": "/api/3/workflow_steps/200c82c7-3bbe-4eca-84c2-d6ee54abb8ab"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "487d5688-a810-4dbf-92ba-65458d7ac081",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Delete an alert record from the TheHive platform based on the specified alert ID",
+          "name": "Delete Alert",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9462aef7-a297-4c20-a8a5-08bc3ef84093",
+          "steps": [
+            {
+              "uuid": "9462aef7-a297-4c20-a8a5-08bc3ef84093",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "b162c4c8-f1a1-49b2-97bd-f6321d7800d7",
+                "title": "TheHive: Delete Alert",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "6941c207-bd50-4702-95cf-8c00864936c1",
+              "@type": "WorkflowStep",
+              "name": "Delete Alert",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "delete_alert",
+                "operationTitle": "Delete Alert",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "4940ff19-dfb1-4a85-bd3b-3499a2834445",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Alert",
+              "sourceStep": "/api/3/workflow_steps/9462aef7-a297-4c20-a8a5-08bc3ef84093",
+              "targetStep": "/api/3/workflow_steps/6941c207-bd50-4702-95cf-8c00864936c1"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5a32cbb2-76cf-423f-9216-73468eb1f973",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Add an attachment to an existing alert in The Hive",
+          "name": "Add Alert Attachment",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d872a792-b9b0-4195-a545-d77c45cbe209",
+          "steps": [
+            {
+              "uuid": "d872a792-b9b0-4195-a545-d77c45cbe209",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "7090c2cf-5ebf-4758-9304-330c08c9e1d5",
+                "title": "TheHive: Add Alert Attachment",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "cdcc8a26-65f4-4652-98b5-aabcdae6c5c6",
+              "@type": "WorkflowStep",
+              "name": "Add Alert Attachment",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "add_alert_attachment",
+                "operationTitle": "Add Alert Attachment",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "d3631390-13e5-4163-b44e-a1209271d682",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Alert Attachment",
+              "sourceStep": "/api/3/workflow_steps/d872a792-b9b0-4195-a545-d77c45cbe209",
+              "targetStep": "/api/3/workflow_steps/cdcc8a26-65f4-4652-98b5-aabcdae6c5c6"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "1c93f2d5-3913-4e47-898c-1ba08943d62a",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Retrieves an information about a specific attachment associated with an alert in The Hive",
+          "name": "Get Alert Attachment",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/acd8f85d-7422-42e0-bb8b-4a9d52581042",
+          "steps": [
+            {
+              "uuid": "acd8f85d-7422-42e0-bb8b-4a9d52581042",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "970c8836-43e3-4bad-8273-56bfb9581712",
+                "title": "TheHive: Get Alert Attachment",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ef18d3db-77d3-4133-9479-d5b9cbb9141a",
+              "@type": "WorkflowStep",
+              "name": "Get Alert Attachment",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "get_alert_attachment",
+                "operationTitle": "Get Alert Attachment",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "37a1a60c-ae20-4757-813e-8429051b52f5",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Alert Attachment",
+              "sourceStep": "/api/3/workflow_steps/acd8f85d-7422-42e0-bb8b-4a9d52581042",
+              "targetStep": "/api/3/workflow_steps/ef18d3db-77d3-4133-9479-d5b9cbb9141a"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "95f080ef-c540-494c-91b8-dfc46aa57267",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "delete a specific attachment associated with an alert in The Hive",
+          "name": "Delete Alert Attachment",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b54528ee-c3e4-4ad9-9e9f-19c48424855c",
+          "steps": [
+            {
+              "uuid": "b54528ee-c3e4-4ad9-9e9f-19c48424855c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "57b5ba3c-fde4-47ec-8903-dda79381bf55",
+                "title": "TheHive: Delete Alert Attachment",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "68167467-3d75-4e3f-9756-111c42a30337",
+              "@type": "WorkflowStep",
+              "name": "Delete Alert Attachment",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "delete_alert_attachment",
+                "operationTitle": "Delete Alert Attachment",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "de48d99a-e1cd-485c-a65e-d9d43a8b5638",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Alert Attachment",
+              "sourceStep": "/api/3/workflow_steps/b54528ee-c3e4-4ad9-9e9f-19c48424855c",
+              "targetStep": "/api/3/workflow_steps/68167467-3d75-4e3f-9756-111c42a30337"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "4d4c9391-822c-47ef-b0e7-fb0fa3338f9b",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Download a specific attachment associated with an alert in The Hive",
+          "name": "Download Alert Attachment",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e8105aee-3cd9-42e3-bea8-d4f20d0ce9ec",
+          "steps": [
+            {
+              "uuid": "e8105aee-3cd9-42e3-bea8-d4f20d0ce9ec",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "9d637bba-7557-47d5-888c-348809d5a40f",
+                "title": "TheHive: Download Alert Attachment",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "3f592ce8-2dbe-4ae5-9e81-c9123600ed6e",
+              "@type": "WorkflowStep",
+              "name": "Download Alert Attachment",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "download_alert_attachment",
+                "operationTitle": "Download Alert Attachment",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "02c281e7-09be-4a5c-815c-a93a0e368b98",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Download Alert Attachment",
+              "sourceStep": "/api/3/workflow_steps/e8105aee-3cd9-42e3-bea8-d4f20d0ce9ec",
+              "targetStep": "/api/3/workflow_steps/3f592ce8-2dbe-4ae5-9e81-c9123600ed6e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9faa0b73-74cc-43a0-8d14-fabf948463fd",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Creates a case in the in TheHive based on the input parameters you have specified.",
+          "name": "Create Case",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/da135429-4543-49b8-8fe1-3ef35a9eeacb",
+          "steps": [
+            {
+              "uuid": "da135429-4543-49b8-8fe1-3ef35a9eeacb",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "e4ab4c3f-784f-4556-80a7-d5b1d338868d",
+                "title": "TheHive: Create Case",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "0dc6f975-c8e7-4f2f-aa9c-121bc800e59e",
+              "@type": "WorkflowStep",
+              "name": "Create Case",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "create_case",
+                "operationTitle": "Create Case",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "fad5999e-a1ac-48d2-a03b-8c9c0401652e",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Case",
+              "sourceStep": "/api/3/workflow_steps/da135429-4543-49b8-8fe1-3ef35a9eeacb",
+              "targetStep": "/api/3/workflow_steps/0dc6f975-c8e7-4f2f-aa9c-121bc800e59e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "e67acee5-89e3-46fc-acf5-c131f1807b26",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Retrieves a specific case information from the TheHive platform based on the input parameters you have specified.",
+          "name": "Get Case",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/9add43ee-2099-4dc9-995c-2e2c082ac29a",
+          "steps": [
+            {
+              "uuid": "9add43ee-2099-4dc9-995c-2e2c082ac29a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "a3ab9516-096f-4ddc-b69a-c5ffcf582a0e",
+                "title": "TheHive: Get Case",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "c6517bb9-ca72-4c3c-a22f-44b291ff1037",
+              "@type": "WorkflowStep",
+              "name": "Get Case",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "get_case",
+                "operationTitle": "Get Case",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "5c15ad47-b2db-487f-88e0-30382bbdc1ac",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Case",
+              "sourceStep": "/api/3/workflow_steps/9add43ee-2099-4dc9-995c-2e2c082ac29a",
+              "targetStep": "/api/3/workflow_steps/c6517bb9-ca72-4c3c-a22f-44b291ff1037"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "7e28f409-fd6a-4ee7-84ad-aed6c9e9c3c4",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Update a case in the in TheHive based on the input parameters you have specified.",
+          "name": "Update Case",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/93c897d0-60e1-4b5a-844b-04f7047459ed",
+          "steps": [
+            {
+              "uuid": "93c897d0-60e1-4b5a-844b-04f7047459ed",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "59d3de37-35df-475c-b828-606075c26a4e",
+                "title": "TheHive: Update Case",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "264c795b-fd2f-4abd-bf40-5705ad035223",
+              "@type": "WorkflowStep",
+              "name": "Update Case",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "update_case",
+                "operationTitle": "Update Case",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ebb7737f-77cb-4e95-935b-bd01cc6ba218",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Case",
+              "sourceStep": "/api/3/workflow_steps/93c897d0-60e1-4b5a-844b-04f7047459ed",
+              "targetStep": "/api/3/workflow_steps/264c795b-fd2f-4abd-bf40-5705ad035223"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "c6f945f9-f797-4776-a345-cfd364ac5265",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Delete a specific case from the TheHive platform based on the input parameters you have specified.",
+          "name": "Delete Case",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f695d42e-0a9a-4a64-ac77-e4ea3487d586",
+          "steps": [
+            {
+              "uuid": "f695d42e-0a9a-4a64-ac77-e4ea3487d586",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "0aadbed8-366e-4f78-b021-1116b26872e7",
+                "title": "TheHive: Delete Case",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "e1a78945-2d66-4122-bc4e-a77c6a9cd997",
+              "@type": "WorkflowStep",
+              "name": "Delete Case",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "delete_case",
+                "operationTitle": "Delete Case",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "d4dedc53-b0ab-43cd-819f-de4e6b67137f",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Case",
+              "sourceStep": "/api/3/workflow_steps/f695d42e-0a9a-4a64-ac77-e4ea3487d586",
+              "targetStep": "/api/3/workflow_steps/e1a78945-2d66-4122-bc4e-a77c6a9cd997"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d4cda862-40f4-470c-a7e3-20e969fe28b9",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Add an observable to an existing case.",
+          "name": "Create Observable in Case",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/90282e4a-6e3b-4cd0-aa48-73ab1e61b9e8",
+          "steps": [
+            {
+              "uuid": "90282e4a-6e3b-4cd0-aa48-73ab1e61b9e8",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "759c3e05-0a00-4bdc-bfb3-1b7224f8a3ff",
+                "title": "TheHive: Create Observable in Case",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "3bdc29a0-e447-4d4e-98d6-bbcf5aec3eec",
+              "@type": "WorkflowStep",
+              "name": "Create Observable in Case",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "create_observable_in_case",
+                "operationTitle": "Create Observable in Case",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "cf2787be-18c1-4bdf-a27f-ade052389879",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Observable in Case",
+              "sourceStep": "/api/3/workflow_steps/90282e4a-6e3b-4cd0-aa48-73ab1e61b9e8",
+              "targetStep": "/api/3/workflow_steps/3bdc29a0-e447-4d4e-98d6-bbcf5aec3eec"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "e2086671-c977-4b92-a24c-8cb54fdb6bc5",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Add an observable to an existing alert.",
+          "name": "Create Observable in Alert",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c30e8d8c-86d8-42e8-b48a-187d9bd236b0",
+          "steps": [
+            {
+              "uuid": "c30e8d8c-86d8-42e8-b48a-187d9bd236b0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "80f3f340-e1bc-41f3-b53a-55d410ca7b8c",
+                "title": "TheHive: Create Observable in Alert",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "7882c513-a447-4811-9c92-71b3123dc255",
+              "@type": "WorkflowStep",
+              "name": "Create Observable in Alert",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "create_observable_in_alert",
+                "operationTitle": "Create Observable in Alert",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "b966036b-6eed-4eed-9182-705e45dd2b31",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Observable in Alert",
+              "sourceStep": "/api/3/workflow_steps/c30e8d8c-86d8-42e8-b48a-187d9bd236b0",
+              "targetStep": "/api/3/workflow_steps/7882c513-a447-4811-9c92-71b3123dc255"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "1132acb1-b3b5-4287-9807-d33f5b200f4b",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Retrieves a specific case information from the TheHive platform based on the input parameters you have specified.",
+          "name": "Get Observable",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/48952403-7a19-48e5-bc94-d7295bb80fe2",
+          "steps": [
+            {
+              "uuid": "48952403-7a19-48e5-bc94-d7295bb80fe2",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "6f0cfbf0-1478-4057-8568-a250be5c46ea",
+                "title": "TheHive: Get Observable",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ea3d58fc-4c9c-467b-a580-107780db1311",
+              "@type": "WorkflowStep",
+              "name": "Get Observable",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "get_observable",
+                "operationTitle": "Get Observable",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "cd028fec-afbe-42c5-a10a-ed07c074f345",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Observable",
+              "sourceStep": "/api/3/workflow_steps/48952403-7a19-48e5-bc94-d7295bb80fe2",
+              "targetStep": "/api/3/workflow_steps/ea3d58fc-4c9c-467b-a580-107780db1311"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f9a890db-b925-4ee7-a7b6-ff58be904d79",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Update the details of an existing observable within The Hive platform.",
+          "name": "Update Observable",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c3e781ba-a9e8-4d5e-83e8-e2fc76ce62f9",
+          "steps": [
+            {
+              "uuid": "c3e781ba-a9e8-4d5e-83e8-e2fc76ce62f9",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "1153cb46-9b6d-44a1-8402-efae713f5539",
+                "title": "TheHive: Update Observable",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "aa14281e-3f0f-4900-abe0-e876f4cc2e83",
+              "@type": "WorkflowStep",
+              "name": "Update Observable",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "update_observable",
+                "operationTitle": "Update Observable",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c9f1e7f9-8e83-4f0e-88b2-4f54026610d2",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Observable",
+              "sourceStep": "/api/3/workflow_steps/c3e781ba-a9e8-4d5e-83e8-e2fc76ce62f9",
+              "targetStep": "/api/3/workflow_steps/aa14281e-3f0f-4900-abe0-e876f4cc2e83"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a39c5abd-62e4-4ca2-a585-e6ea58c63ff9",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Delete a specific observable from the TheHive platform based on the input parameters you have specified.",
+          "name": "Delete Observable",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0433a10d-027a-4ed9-a61a-cbd14933a66e",
+          "steps": [
+            {
+              "uuid": "0433a10d-027a-4ed9-a61a-cbd14933a66e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "b35d3243-464f-4ff5-8b6c-3c6a208623a0",
+                "title": "TheHive: Delete Observable",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "643e9edd-f11e-41b9-ba45-91a7b1e62322",
+              "@type": "WorkflowStep",
+              "name": "Delete Observable",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "delete_observable",
+                "operationTitle": "Delete Observable",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "4e70fe78-5593-499a-818d-42e28cb0e71f",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Observable",
+              "sourceStep": "/api/3/workflow_steps/0433a10d-027a-4ed9-a61a-cbd14933a66e",
+              "targetStep": "/api/3/workflow_steps/643e9edd-f11e-41b9-ba45-91a7b1e62322"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9a55892d-6708-4bb2-83a2-2a1ecb10c684",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Creates a task in the in TheHive based on the input parameters you have specified.",
+          "name": "Create Task",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/a5c06f00-27b6-4664-a652-bceec3adc439",
+          "steps": [
+            {
+              "uuid": "a5c06f00-27b6-4664-a652-bceec3adc439",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "5a213372-f39f-437b-b2c6-6c2365d1380a",
+                "title": "TheHive: Create Task",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "2971f05f-8b97-4351-a935-f1d6abc1737c",
+              "@type": "WorkflowStep",
+              "name": "Create Task",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "create_task",
+                "operationTitle": "Create Task",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "03c5daaa-c992-47da-8caa-6598bcd08156",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Task",
+              "sourceStep": "/api/3/workflow_steps/a5c06f00-27b6-4664-a652-bceec3adc439",
+              "targetStep": "/api/3/workflow_steps/2971f05f-8b97-4351-a935-f1d6abc1737c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d4a14bf1-06f8-4ab2-a725-b6989473454a",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Retrieves information about a specific task from The Hive platform based on the input parameters you have specified.",
+          "name": "Get Task",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7e3c6ebc-05b8-4355-898b-1d4f385d9be4",
+          "steps": [
+            {
+              "uuid": "7e3c6ebc-05b8-4355-898b-1d4f385d9be4",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "9f5cfb7f-3ba1-4ea4-96ff-a128ca8e879e",
+                "title": "TheHive: Get Task",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "7ff0eb01-a83c-4cd3-9500-a4f480c696f1",
+              "@type": "WorkflowStep",
+              "name": "Get Task",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "get_task",
+                "operationTitle": "Get Task",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "3f99e35c-2300-4d66-8c26-3f541737dc55",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Task",
+              "sourceStep": "/api/3/workflow_steps/7e3c6ebc-05b8-4355-898b-1d4f385d9be4",
+              "targetStep": "/api/3/workflow_steps/7ff0eb01-a83c-4cd3-9500-a4f480c696f1"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ea251106-392c-4397-9294-bf2505936282",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Update the details of an existing task within The Hive platform.",
+          "name": "Update Task",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2f2f017c-19b2-46bf-9e2b-77f3d5dcd060",
+          "steps": [
+            {
+              "uuid": "2f2f017c-19b2-46bf-9e2b-77f3d5dcd060",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "72b515c0-e14a-441e-a846-7a281d755853",
+                "title": "TheHive: Update Task",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "eb1ec3cb-b134-40f7-a3a7-1b0ed7546b7c",
+              "@type": "WorkflowStep",
+              "name": "Update Task",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "update_task",
+                "operationTitle": "Update Task",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "d716120b-020a-45ad-87a2-193bd6c2f260",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Task",
+              "sourceStep": "/api/3/workflow_steps/2f2f017c-19b2-46bf-9e2b-77f3d5dcd060",
+              "targetStep": "/api/3/workflow_steps/eb1ec3cb-b134-40f7-a3a7-1b0ed7546b7c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "ae13a2c3-2ced-4a1b-8bc1-e16dde3dd45e",
+          "collection": "/api/3/workflow_collections/a351ee22-77e6-403e-a907-c66dfc82093d",
+          "triggerLimit": null,
+          "description": "Delete a specific task from the TheHive platform based on the input parameters you have specified.",
+          "name": "Delete Task",
+          "tag": "#TheHive",
+          "recordTags": [
+            "Thehive",
+            "thehive"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0660b28a-1df4-4dc1-a5ad-db6d0af03a03",
+          "steps": [
+            {
+              "uuid": "0660b28a-1df4-4dc1-a5ad-db6d0af03a03",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "f806fab2-f13b-4c80-82a0-01b43d1f9cd7",
+                "title": "TheHive: Delete Task",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "baffd201-f12c-430e-91ac-9e5b42558c98",
+              "@type": "WorkflowStep",
+              "name": "Delete Task",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "TheHive",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "thehive",
+                "operation": "delete_task",
+                "operationTitle": "Delete Task",
+                "step_variables": {}
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "89b8e03d-1a03-4ff1-b576-48501f104ceb",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Delete Task",
+              "sourceStep": "/api/3/workflow_steps/0660b28a-1df4-4dc1-a5ad-db6d0af03a03",
+              "targetStep": "/api/3/workflow_steps/baffd201-f12c-430e-91ac-9e5b42558c98"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

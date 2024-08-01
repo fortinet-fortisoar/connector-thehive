@@ -1,0 +1,2241 @@
+{
+  "name": "thehive",
+  "label": "TheHive",
+  "version": "1.0.0",
+  "category": "Case Management",
+  "description": "The Hive Security Incident Response Platform involves connecting external security tools, systems, or data sources with The Hive's platform. This integration facilitates centralized incident management, response coordination, and automation, enhancing overall security operations by streamlining incident detection, investigation, and resolution processes.",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "publisher": "Fortinet",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "type": "text",
+        "description": "Specify the Rest API endpoint URL of the TheHive server to connect and perform automated operations.",
+        "tooltip": "Specify the Rest API endpoint URL of the TheHive server to connect and perform automated operations.",
+        "required": true,
+        "visible": true,
+        "editable": true
+      },
+      {
+        "title": "API Key",
+        "name": "api_key",
+        "type": "password",
+        "tooltip": "Specify the API key to access the TheHive Rest API endpoint to which you will connect and perform the automated operations.",
+        "description": "Specify the API key to access the TheHive Rest API endpoint to which you will connect and perform the automated operations.",
+        "required": false,
+        "visible": true,
+        "editable": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "type": "checkbox",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Create Alert",
+      "operation": "create_alert",
+      "description": "Creates an alert in the in TheHive based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "create_alert",
+      "output_schema": {
+        "_id": "",
+        "_type": "",
+        "_createdBy": "",
+        "_updatedBy": "",
+        "_createdAt": "",
+        "_updatedAt": "",
+        "type": "",
+        "source": "",
+        "sourceRef": "",
+        "externalLink": "",
+        "title": "",
+        "description": "",
+        "severity": "",
+        "severityLabel": "",
+        "date": "",
+        "tags": [
+        ],
+        "tlp": "",
+        "tlpLabel": "",
+        "pap": "",
+        "papLabel": "",
+        "follow": "",
+        "customFields": [
+          {
+            "_id": "",
+            "name": "",
+            "type": "",
+            "value": "",
+            "order": ""
+          }
+        ],
+        "caseTemplate": "",
+        "observableCount": "",
+        "caseId": "",
+        "status": "",
+        "stage": "",
+        "assignee": "",
+        "summary": "",
+        "extraData": {},
+        "newDate": "",
+        "inProgressDate": "",
+        "closedDate": "",
+        "importedDate": "",
+        "timeToDetect": "",
+        "timeToTriage": "",
+        "timeToQualify": "",
+        "timeToAcknowledge": ""
+      },
+      "parameters": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "text",
+          "description": "Specify the title of the alert that you are creating in The Hive Platform",
+          "tooltip": "Specify the title of the alert that you are creating in The Hive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "Specify the description of the alert that you are creating in The Hive Platform",
+          "tooltip": "Specify the description of the alert that you are creating in The Hive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Source Reference",
+          "name": "type",
+          "type": "text",
+          "description": "Provide the source reference for the alert that you are creating in The Hive Platform",
+          "tooltip": "Provide the source reference for the alert that you are creating in The Hive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Source",
+          "name": "source",
+          "type": "text",
+          "description": "Specify the source of the alert that you are creating in The Hive Platform",
+          "tooltip": "Specify the source of the alert that you are creating in The Hive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Alert Type",
+          "name": "type",
+          "type": "text",
+          "description": "Specify the type of the alert that you are creating in The Hive Platform",
+          "tooltip": "Specify the type of the alert that you are creating in The Hive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Severity",
+          "name": "severity",
+          "type": "text",
+          "description": "Specify the severity of the alert that you are creating in The Hive Platform",
+          "tooltip": "Specify the severity of the alert that you are creating in The Hive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Assignee",
+          "name": "assignee",
+          "type": "text",
+          "description": "Specify the assignee of the alert that you are creating in The Hive Platform",
+          "tooltip": "Specify the assignee of the alert that you are creating in The Hive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Summary",
+          "name": "summary",
+          "type": "text",
+          "description": "Specify the summary of the alert that you are creating in The Hive Platform",
+          "tooltip": "Specify the summary of the alert that you are creating in The Hive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Attachment",
+          "name": "attachment",
+          "type": "file",
+          "description": "Upload a file attachment that contains multipart observables data which you want to add when creating the alert in The Hive platform.",
+          "tooltip": "Upload a file attachment that contains multipart observables data which you want to add when creating the alert in The Hive platform.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Observables",
+          "name": "observables",
+          "type": "json",
+          "description": "Specify the list of observables that you want to add at the time of creating the alert in TheHive Platform.",
+          "tooltip": "Specify the list of observables that you want to add at the time of creating the alert in TheHive Platform.",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": [
+            {
+              "dataType": "url",
+              "data": "http://example.org"
+            },
+            {
+              "dataType": "mail",
+              "data": "foo@example.org"
+            }
+          ]
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "tooltip": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Alert",
+      "operation": "get_alert",
+      "description": "Retrieve detailed information of the specified alert based on its ID.",
+      "category": "investigation",
+      "annotation": "get_alert",
+      "output_schema": {
+        "_id": "",
+        "_type": "",
+        "_createdBy": "",
+        "_updatedBy": "",
+        "_createdAt": "",
+        "_updatedAt": "",
+        "type": "",
+        "source": "",
+        "sourceRef": "",
+        "externalLink": "",
+        "title": "",
+        "description": "",
+        "severity": "",
+        "severityLabel": "",
+        "date": "",
+        "tags": [
+        ],
+        "tlp": "",
+        "tlpLabel": "",
+        "pap": "",
+        "papLabel": "",
+        "follow": "",
+        "customFields": [
+          {
+            "_id": "",
+            "name": "",
+            "type": "",
+            "value": "",
+            "order": ""
+          }
+        ],
+        "caseTemplate": "",
+        "observableCount": "",
+        "caseId": "",
+        "status": "",
+        "stage": "",
+        "assignee": "",
+        "summary": "",
+        "extraData": {},
+        "newDate": "",
+        "inProgressDate": "",
+        "closedDate": "",
+        "importedDate": "",
+        "timeToDetect": "",
+        "timeToTriage": "",
+        "timeToQualify": "",
+        "timeToAcknowledge": ""
+      },
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "name": "alertID",
+          "type": "text",
+          "description": "Specify the ID of the alert you want to retrieve the information of the alert",
+          "tooltip": "Specify the ID of the alert you want to retrieve information of the alert",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Update Alerts",
+      "operation": "update_alerts",
+      "description": "Update an alert in the in TheHive based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "update_alerts",
+      "output_schema": {
+        "_id": "",
+        "_type": "",
+        "_createdBy": "",
+        "_updatedBy": "",
+        "_createdAt": "",
+        "_updatedAt": "",
+        "type": "",
+        "source": "",
+        "sourceRef": "",
+        "externalLink": "",
+        "title": "",
+        "description": "",
+        "severity": "",
+        "severityLabel": "",
+        "date": "",
+        "tags": [
+        ],
+        "tlp": "",
+        "tlpLabel": "",
+        "pap": "",
+        "papLabel": "",
+        "follow": "",
+        "customFields": [
+          {
+            "_id": "",
+            "name": "",
+            "type": "",
+            "value": "",
+            "order": ""
+          }
+        ],
+        "caseTemplate": "",
+        "observableCount": "",
+        "caseId": "",
+        "status": "",
+        "stage": "",
+        "assignee": "",
+        "summary": "",
+        "extraData": {},
+        "newDate": "",
+        "inProgressDate": "",
+        "closedDate": "",
+        "importedDate": "",
+        "timeToDetect": "",
+        "timeToTriage": "",
+        "timeToQualify": "",
+        "timeToAcknowledge": ""
+      },
+      "parameters": [
+        {
+          "title": "Action Type",
+          "name": "action_type",
+          "type": "select",
+          "description": "Select the action type for updating alerts. You can choose either a single record update or a bulk update.",
+          "tooltip": "Select the action type for updating alerts. You can choose either a single record update or a bulk update.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "options": [
+            "Single Record Update",
+            "Bulk Update"
+          ],
+          "onchange": {
+            "Single Record Update": [
+              {
+                "title": "Alert ID",
+                "name": "alert_id",
+                "type": "text",
+                "description": "Specify the ID of the alert you want to update.",
+                "tooltip": "Specify the ID of the alert you want to update.",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Bulk Update": [
+              {
+                "title": "Alert IDs",
+                "name": "alert_ids",
+                "type": "text",
+                "description": "Specify the IDs of the alerts you want to update in bulk.",
+                "tooltip": "Specify the IDs of the alerts you want to update in bulk.",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "text",
+          "description": "Specify the title of the alert you want to update in TheHive Platform",
+          "tooltip": "Specify the title of the alert you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "Specify the description of the alert you want to update in TheHive Platform",
+          "tooltip": "Specify the description of the alert you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Source",
+          "name": "source",
+          "type": "text",
+          "description": "Specify the source of the alert you want to update in TheHive Platform",
+          "tooltip": "Specify the source of the alert you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Alert Type",
+          "name": "type",
+          "type": "text",
+          "description": "Specify the type of the alert you want to update in TheHive Platform",
+          "tooltip": "Specify the type of the alert you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Severity",
+          "name": "severity",
+          "type": "text",
+          "description": "Specify the Severity of the alert you want to update in TheHive Platform",
+          "tooltip": "Specify the Severity of the alert you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Assignee",
+          "name": "assignee",
+          "type": "text",
+          "description": "Specify the assignee of the alert you want to update in TheHive Platform",
+          "tooltip": "Specify the assignee of the alert you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Summary",
+          "name": "summary",
+          "type": "text",
+          "description": "Specify the summary of the alert you want to update in TheHive Platform",
+          "tooltip": "Specify the summary of the alert you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify the additional fields you want to update and provide them in JSON format.",
+          "tooltip": "Specify the additional fields you want to update and provide them in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Delete Alert",
+      "operation": "delete_alert",
+      "description": "Delete an alert record from the TheHive platform based on the specified alert ID",
+      "category": "investigation",
+      "annotation": "delete_alert",
+      "output_schema": {
+        "type": "",
+        "message": ""
+      },
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "name": "alertID",
+          "type": "text",
+          "description": "Specify the ID of the alert you want to delete.",
+          "tooltip": "Specify the ID of the alert you want to delete.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Add Alert Attachment",
+      "operation": "add_alert_attachment",
+      "description": "Add an attachment to an existing alert in The Hive",
+      "category": "investigation",
+      "annotation": "add_alert_attachment",
+      "output_schema": {
+        "attachments": [
+          {
+            "_id": "",
+            "_type": "",
+            "_createdBy": "",
+            "_updatedBy": "",
+            "_createdAt": "",
+            "_updatedAt": "",
+            "name": "",
+            "hashes": [
+            ],
+            "size": "",
+            "contentType": "",
+            "id": ""
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "name": "alertID",
+          "type": "text",
+          "description": "Specify the ID of the alert which you want to add attachment.",
+          "tooltip": "Specify the ID of the alert which you want to add attachment.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Attachment",
+          "name": "attachment",
+          "type": "file",
+          "description": "Upload a file attachment that contains multipart data which you want to add attachment to the alert in The Hive platform.",
+          "tooltip": "Upload a file attachment that contains multipart data which you want to add attachment to the alert in The Hive platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Can Rename",
+          "name": "canRename",
+          "type": "checkbox",
+          "description": "If set to true, the files can be renamed if they already exist with the same name.",
+          "tooltip": "If set to true, the files can be renamed if they already exist with the same name.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Alert Attachment",
+      "operation": "get_alert_attachment",
+      "description": "Retrieves an information about a specific attachment associated with an alert in The Hive",
+      "category": "investigation",
+      "annotation": "get_alert_attachment",
+      "output_schema": {
+        "type": "",
+        "message": ""
+      },
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "name": "alertID",
+          "type": "text",
+          "description": "Specify the ID of the alert which you want to retrieve attachment.",
+          "tooltip": "Specify the ID of the alert which you want to retrieve attachment",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Attachment ID",
+          "name": "attachmentId",
+          "type": "text",
+          "description": "Specify the ID of the attachment for which you want to retrieve information.",
+          "tooltip": "Specify the ID of the attachment for which you want to retrieve information.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Delete Alert Attachment",
+      "operation": "delete_alert_attachment",
+      "description": "delete a specific attachment associated with an alert in The Hive",
+      "category": "investigation",
+      "annotation": "delete_alert_attachment",
+      "output_schema": {
+        "type": "",
+        "message": ""
+      },
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "name": "alertID",
+          "type": "text",
+          "description": "Specify the ID of the alert which you want to retrieve attachment.",
+          "tooltip": "Specify the ID of the alert which you want to retrieve attachment",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Attachment ID",
+          "name": "attachmentId",
+          "type": "text",
+          "description": "Specify the ID of the attachment for which you want to delete.",
+          "tooltip": "Specify the ID of the attachment for which you want to delete.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Download Alert Attachment",
+      "operation": "download_alert_attachment",
+      "description": "Download a specific attachment associated with an alert in The Hive",
+      "category": "investigation",
+      "annotation": "download_alert_attachment",
+      "output_schema": {
+        "type": "",
+        "message": ""
+      },
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "name": "alertID",
+          "type": "text",
+          "description": "Specify the ID of the alert which you want to download associate attachment.",
+          "tooltip": "Specify the ID of the alert which you want to download associate attachment.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Attachment ID",
+          "name": "attachmentId",
+          "type": "text",
+          "description": "Specify the ID of the attachment for which you want to download.",
+          "tooltip": "Specify the ID of the attachment for which you want to download.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Create Case",
+      "operation": "create_case",
+      "description": "Creates a case in the in TheHive based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "create_case",
+      "output_schema": {
+        "title": "",
+        "description": "",
+        "severity": "",
+        "startDate": "",
+        "endDate": "",
+        "tags": [
+          ""
+        ],
+        "flag": "",
+        "tlp": "",
+        "pap": "",
+        "status": "",
+        "summary": "",
+        "assignee": "",
+        "customFields": {
+          "property1": "",
+          "property2": ""
+        },
+        "caseTemplate": "",
+        "tasks": [
+          {
+            "title": "",
+            "group": "",
+            "description": "",
+            "status": "",
+            "flag": "",
+            "startDate": "",
+            "endDate": "",
+            "order": "",
+            "dueDate": "",
+            "assignee": "",
+            "mandatory": ""
+          }
+        ],
+        "pages": [
+          {
+            "title": "",
+            "content": "",
+            "order": "",
+            "category": ""
+          }
+        ],
+        "sharingParameters": [
+          {
+            "organisation": "",
+            "share": "",
+            "profile": "",
+            "taskRule": "",
+            "observableRule": ""
+          }
+        ],
+        "taskRule": "string",
+        "observableRule": "string"
+      },
+      "parameters": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "text",
+          "description": "Specify the title of the case you want to create in TheHive Platform",
+          "tooltip": "Specify the title of the case you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "Specify the description of the case you want to create in TheHive Platform",
+          "tooltip": "Specify the description of the case you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Summary",
+          "name": "summary",
+          "type": "text",
+          "description": "Specify the summary of the case you want to create in TheHive Platform",
+          "tooltip": "Specify the summary of the case you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Assignee",
+          "name": "assignee",
+          "type": "text",
+          "description": "Specify the assignee of the case you want to create in TheHive Platform",
+          "tooltip": "Specify the assignee of the case you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Severity",
+          "name": "severity",
+          "type": "text",
+          "description": "Specify the severity of the case you want to create in TheHive Platform",
+          "tooltip": "Specify the severity of the case you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Status",
+          "name": "status",
+          "type": "text",
+          "description": "Specify the status of the case you want to create in TheHive Platform",
+          "tooltip": "Specify the status of the case you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "tooltip": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Case",
+      "operation": "get_case",
+      "description": "Retrieves a specific case information from the TheHive platform based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_case",
+      "output_schema": {
+        "_id": "",
+        "_type": "",
+        "_createdBy": "",
+        "_updatedBy": "",
+        "_createdAt": "",
+        "_updatedAt": "",
+        "number": "",
+        "title": "",
+        "description": "",
+        "severity": "",
+        "severityLabel": "",
+        "startDate": "",
+        "endDate": "",
+        "tags": [
+        ],
+        "flag": "",
+        "tlp": "",
+        "tlpLabel": "",
+        "pap": "",
+        "papLabel": "",
+        "status": "",
+        "stage": "",
+        "summary": "",
+        "impactStatus": "",
+        "assignee": "",
+        "customFields": [
+          {
+            "_id": "",
+            "name": "",
+            "type": "",
+            "value": "",
+            "order": ""
+          }
+        ],
+        "userPermissions": [
+        ],
+        "extraData": {},
+        "newDate": "",
+        "inProgressDate": "",
+        "closedDate": "",
+        "alertDate": "",
+        "alertNewDate": "",
+        "alertInProgressDate": "",
+        "alertImportedDate": "",
+        "timeToDetect": "",
+        "timeToTriage": "",
+        "timeToQualify": "",
+        "timeToAcknowledge": "",
+        "timeToResolve": "",
+        "handlingDuration": ""
+      },
+      "parameters": [
+        {
+          "title": "Case ID",
+          "name": "caseID",
+          "type": "text",
+          "description": "Specify the ID of the case from which you want to retrieve information from TheHive Platform.",
+          "tooltip": "Specify the ID of the case from which you want to retrieve information from TheHive Platform.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Update Case",
+      "operation": "update_case",
+      "description": "Update a case in the in TheHive based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "update_case",
+      "output_schema": {
+        "type": "",
+        "message": ""
+      },
+      "parameters": [
+        {
+          "title": "Action Type",
+          "name": "action_type",
+          "type": "select",
+          "description": "Select the action type for updating case. You can choose either a single record update or a bulk update.",
+          "tooltip": "Select the action type for updating case. You can choose either a single record update or a bulk update.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "options": [
+            "Single Record Update",
+            "Bulk Update"
+          ],
+          "onchange": {
+            "Single Record Update": [
+              {
+                "title": "Case ID",
+                "name": "case_id",
+                "type": "text",
+                "description": "Specify the ID of the case you want to update.",
+                "tooltip": "Specify the ID of the alert you want to update.",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Bulk Update": [
+              {
+                "title": "Case IDs",
+                "name": "case_ids",
+                "type": "text",
+                "description": "Specify the IDs of the case you want to update in bulk.",
+                "tooltip": "Specify the IDs of the case you want to update in bulk.",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "text",
+          "description": "Specify the title of the case you want to update in TheHive Platform",
+          "tooltip": "Specify the title of the case you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "Specify the description of the case you want to update in TheHive Platform",
+          "tooltip": "Specify the description of the case you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Summary",
+          "name": "summary",
+          "type": "text",
+          "description": "Specify the summary of the case you want to update in TheHive Platform",
+          "tooltip": "Specify the summary of the case you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Assignee",
+          "name": "assignee",
+          "type": "text",
+          "description": "Specify the assignee of the case you want to update in TheHive Platform",
+          "tooltip": "Specify the assignee of the case you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Severity",
+          "name": "severity",
+          "type": "text",
+          "description": "Specify the severity of the case you want to update in TheHive Platform",
+          "tooltip": "Specify the severity of the case you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Status",
+          "name": "status",
+          "type": "text",
+          "description": "Specify the status of the case you want to update in TheHive Platform",
+          "tooltip": "Specify the status of the case you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "tooltip": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Delete Case",
+      "operation": "delete_case",
+      "description": "Delete a specific case from the TheHive platform based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "delete_case",
+      "output_schema": {
+        "_id": "",
+        "_type": "",
+        "_createdBy": "",
+        "_updatedBy": "",
+        "_createdAt": "",
+        "_updatedAt": "",
+        "number": "",
+        "title": "",
+        "description": "",
+        "severity": "",
+        "severityLabel": "",
+        "startDate": "",
+        "endDate": "",
+        "tags": [
+        ],
+        "flag": "",
+        "tlp": "",
+        "tlpLabel": "",
+        "pap": "",
+        "papLabel": "",
+        "status": "",
+        "stage": "",
+        "summary": "",
+        "impactStatus": "",
+        "assignee": "",
+        "customFields": [
+          {
+            "_id": "",
+            "name": "",
+            "type": "",
+            "value": "",
+            "order": ""
+          }
+        ],
+        "userPermissions": [
+        ],
+        "extraData": {},
+        "newDate": "",
+        "inProgressDate": "",
+        "closedDate": "",
+        "alertDate": "",
+        "alertNewDate": "",
+        "alertInProgressDate": "",
+        "alertImportedDate": "",
+        "timeToDetect": "",
+        "timeToTriage": "",
+        "timeToQualify": "",
+        "timeToAcknowledge": "",
+        "timeToResolve": "",
+        "handlingDuration": ""
+      },
+      "parameters": [
+        {
+          "title": "Case ID",
+          "name": "caseID",
+          "type": "text",
+          "description": "Specify the ID of the case from which you want to delete from TheHive Platform.",
+          "tooltip": "Specify the ID of the case from which you want to delete from TheHive Platform.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+
+    {
+      "title": "Create Observable in Case",
+      "operation": "create_observable_in_case",
+      "description": "Add an observable to an existing case.",
+      "category": "investigation",
+      "annotation": "create_observable_in_case",
+      "output_schema": [
+        {
+          "_id": "",
+          "_type": "",
+          "_createdBy": "",
+          "_updatedBy": "",
+          "_createdAt": "",
+          "_updatedAt": "",
+          "dataType": "",
+          "data": "",
+          "startDate": "",
+          "attachment": {
+            "_id": "",
+            "_type": "",
+            "_createdBy": "",
+            "_updatedBy": "",
+            "_createdAt": "",
+            "_updatedAt": "",
+            "name": "",
+            "hashes": [
+            ],
+            "size": "",
+            "contentType": "",
+            "id": ""
+          },
+          "tlp": "",
+          "tlpLabel": "",
+          "pap": "",
+          "papLabel": "",
+          "tags": [
+          ],
+          "ioc": "",
+          "sighted": "",
+          "sightedAt": "",
+          "reports": {},
+          "message": "",
+          "extraData": {},
+          "ignoreSimilarity": ""
+        }
+      ],
+      "parameters": [
+        {
+          "title": "Case ID",
+          "name": "caseID",
+          "type": "text",
+          "description": "Specify the ID of the case for which you want to create an observable in The Hive Platform",
+          "tooltip": "Specify the ID of the case for which you want to create an observable in The Hive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Data Type",
+          "name": "dataType",
+          "type": "select",
+          "description": "Select the input type for creating an observable. You can choose either 'Create Observable using Attachment' or 'Create Observable using Plain Text.'",
+          "tooltip": "Select the input type for creating an observable. You can choose either 'Create Observable using Attachment' or 'Create Observable using Plain Text.'",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "options": [
+            "Autonomous-System",
+            "Domain",
+            "File",
+            "FQDN",
+            "Hash",
+            "IP",
+            "Mail",
+            "Mail_Subject",
+            "Other",
+            "Regexp",
+            "Registry",
+            "Uri_Path",
+            "URL",
+            "User-Agent"
+          ],
+          "onchange": {
+            "Autonomous-System": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Domain": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "FQDN": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Hash": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "IP": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Mail": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Mail_Subject": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Other": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Regexp": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Registry": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Uri_Path": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "URL": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "User-Agent": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "File": [
+              {
+                "title": "Attachment",
+                "name": "attachment",
+                "type": "file",
+                "description": "Upload a file attachment that contains multipart observables data which you want to add with the case in The Hive platform.",
+                "tooltip": "Upload a file attachment that contains multipart observables data which you want to add with the case in The Hive platform.",
+                "visible": true,
+                "editable": true,
+                "required": true
+              },
+              {
+                "title": "Is Zip",
+                "name": "isZip",
+                "type": "checkbox",
+                "description": "If set to true, the file is unzipped using the Zip Password and each file in the zip is treated as an observable.",
+                "tooltip": "If set to true, the file is unzipped using the Zip Password and each file in the zip is treated as an observable.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "onchange": {
+                  "true": [
+                    {
+                      "title": "Zip Password",
+                      "name": "zipPassword",
+                      "type": "password",
+                      "description": "Specify the password for the zip file that you will use to unzip it.",
+                      "tooltip": "Specify the password for the zip file that you will use to unzip it.",
+                      "visible": true,
+                      "editable": true,
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "title": "Message",
+          "name": "message",
+          "type": "text",
+          "description": "Specify the message of the observable you want to create for case in TheHive Platform",
+          "tooltip": "Specify the message of the observable you want to create for case in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "text",
+          "description": "Specify the Tags of the observable you want to create for case in TheHive Platform",
+          "tooltip": "Specify the tags of the observable you want to create for case in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "TLP",
+          "name": "tlp",
+          "type": "text",
+          "description": "Specify the tlp of the observable you want to create for case in TheHive Platform",
+          "tooltip": "Specify the tlp of the observable you want to create for case in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Ignore Similarity",
+          "name": "ignoreSimilarity",
+          "type": "checkbox",
+          "description": "Selecting this option will bypass the similarity check for the observable type being created for the case in The Hive Platform.",
+          "tooltip": "Selecting this option will bypass the similarity check for the observable type being created for the case in The Hive Platform.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "tooltip": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": ""
+    },
+    {
+      "title": "Create Observable in Alert",
+      "operation": "create_observable_in_alert",
+      "description": "Add an observable to an existing alert.",
+      "category": "investigation",
+      "annotation": "create_observable_in_alert",
+      "output_schema": [
+        {
+          "_id": "",
+          "_type": "",
+          "_createdBy": "",
+          "_updatedBy": "",
+          "_createdAt": "",
+          "_updatedAt": "",
+          "dataType": "",
+          "data": "",
+          "startDate": "",
+          "attachment": {
+            "_id": "",
+            "_type": "",
+            "_createdBy": "",
+            "_updatedBy": "",
+            "_createdAt": "",
+            "_updatedAt": "",
+            "name": "",
+            "hashes": [
+            ],
+            "size": "",
+            "contentType": "",
+            "id": ""
+          },
+          "tlp": "",
+          "tlpLabel": "",
+          "pap": "",
+          "papLabel": "",
+          "tags": [
+          ],
+          "ioc": "",
+          "sighted": "",
+          "sightedAt": "",
+          "reports": {},
+          "message": "",
+          "extraData": {},
+          "ignoreSimilarity": ""
+        }
+      ],
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "name": "alertID",
+          "type": "text",
+          "description": "Specify the ID of the alert for which you want to create an observable in The Hive Platform",
+          "tooltip": "Specify the ID of the alert for which you want to create an observable in The Hive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Data Type",
+          "name": "dataType",
+          "type": "select",
+          "description": "Select the input type for creating an observable. You can choose either 'Create Observable using Attachment' or 'Create Observable using Plain Text.'",
+          "tooltip": "Select the input type for creating an observable. You can choose either 'Create Observable using Attachment' or 'Create Observable using Plain Text.'",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "options": [
+            "Autonomous-System",
+            "Domain",
+            "File",
+            "FQDN",
+            "Hash",
+            "IP",
+            "Mail",
+            "Mail_Subject",
+            "Other",
+            "Regexp",
+            "Registry",
+            "Uri_Path",
+            "URL",
+            "User-Agent"
+          ],
+          "onchange": {
+            "Autonomous-System": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Domain": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "FQDN": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Hash": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "IP": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Mail": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Mail_Subject": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Other": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Regexp": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Registry": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Uri_Path": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "URL": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "User-Agent": [
+              {
+                "title": "Data",
+                "name": "data",
+                "type": "text",
+                "description": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "tooltip": "Provide the data for the observable that you wish to create and associate with a case in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "File": [
+              {
+                "title": "Attachment",
+                "name": "attachment",
+                "type": "file",
+                "description": "Upload a file attachment that contains multipart observables data which you want to add with the case in The Hive platform.",
+                "tooltip": "Upload a file attachment that contains multipart observables data which you want to add with the case in The Hive platform.",
+                "visible": true,
+                "editable": true,
+                "required": true
+              },
+              {
+                "title": "Is Zip",
+                "name": "isZip",
+                "type": "checkbox",
+                "description": "If set to true, the file is unzipped using the Zip Password and each file in the zip is treated as an observable.",
+                "tooltip": "If set to true, the file is unzipped using the Zip Password and each file in the zip is treated as an observable.",
+                "visible": true,
+                "editable": true,
+                "required": false,
+                "onchange": {
+                  "true": [
+                    {
+                      "title": "Zip Password",
+                      "name": "zipPassword",
+                      "type": "password",
+                      "description": "Specify the password for the zip file that you will use to unzip it.",
+                      "tooltip": "Specify the password for the zip file that you will use to unzip it.",
+                      "visible": true,
+                      "editable": true,
+                      "required": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "title": "Message",
+          "name": "message",
+          "type": "text",
+          "description": "Specify the message of the observable you want to create for alert in TheHive Platform",
+          "tooltip": "Specify the message of the observable you want to create for alert in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "text",
+          "description": "Specify the Tags of the observable you want to create for alert in TheHive Platform",
+          "tooltip": "Specify the source of the observable you want to create for alert in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Ignore Similarity",
+          "name": "ignoreSimilarity",
+          "type": "checkbox",
+          "description": "If you select this option, the similarity of the observable type you want to create for the alert in The Hive Platform will be ignored",
+          "tooltip": "If you select this option, the similarity of the observable type you want to create for the alert in The Hive Platform will be ignored",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "tooltip": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": ""
+    },
+    {
+      "title": "Get Observable",
+      "operation": "get_observable",
+      "description": "Retrieves a specific case information from the TheHive platform based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_observable",
+      "output_schema": {
+        "_id": "",
+        "_type": "",
+        "_createdBy": "",
+        "_updatedBy": "",
+        "_createdAt": "",
+        "_updatedAt": "",
+        "dataType": "",
+        "data": "",
+        "startDate": "",
+        "attachment": {
+          "_id": "",
+          "_type": "",
+          "_createdBy": "",
+          "_updatedBy": "",
+          "_createdAt": "",
+          "_updatedAt": "",
+          "name": "",
+          "hashes": [
+          ],
+          "size": "",
+          "contentType": "",
+          "id": ""
+        },
+        "tlp": "",
+        "tlpLabel": "",
+        "pap": "",
+        "papLabel": "",
+        "tags": [
+        ],
+        "ioc": "",
+        "sighted": "",
+        "sightedAt": "",
+        "reports": {},
+        "message": "",
+        "extraData": {},
+        "ignoreSimilarity": ""
+      },
+      "parameters": [
+        {
+          "title": "Observable ID",
+          "name": "observableId",
+          "type": "text",
+          "description": "Specify the ID of the observable from which you want to retrieve information from TheHive Platform.",
+          "tooltip": "Specify the ID of the observable from which you want to retrieve information from TheHive Platform.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Update Observable",
+      "operation": "update_observable",
+      "description": "Update the details of an existing observable within The Hive platform.",
+      "category": "investigation",
+      "annotation": "update_observable",
+      "output_schema": [
+        {
+          "_id": "",
+          "_type": "",
+          "_createdBy": "",
+          "_updatedBy": "",
+          "_createdAt": "",
+          "_updatedAt": "",
+          "dataType": "",
+          "data": "",
+          "startDate": "",
+          "attachment": {
+            "_id": "",
+            "_type": "",
+            "_createdBy": "",
+            "_updatedBy": "",
+            "_createdAt": "",
+            "_updatedAt": "",
+            "name": "",
+            "hashes": [
+            ],
+            "size": "",
+            "contentType": "",
+            "id": ""
+          },
+          "tlp": "",
+          "tlpLabel": "",
+          "pap": "",
+          "papLabel": "",
+          "tags": [
+          ],
+          "ioc": "",
+          "sighted": "",
+          "sightedAt": "",
+          "reports": {},
+          "message": "",
+          "extraData": {},
+          "ignoreSimilarity": ""
+        }
+      ],
+      "parameters": [
+        {
+          "title": "Action Type",
+          "name": "action_type",
+          "type": "select",
+          "description": "Select the action type for updating observable. You can choose either a single record update or a bulk update.",
+          "tooltip": "Select the action type for updating observable. You can choose either a single record update or a bulk update.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "options": [
+            "Single Record Update",
+            "Bulk Update"
+          ],
+          "onchange": {
+            "Single Record Update": [
+              {
+                "title": "Observable ID",
+                "name": "observable_id",
+                "type": "text",
+                "description": "Specify the ID of the observable for which you want to update an observable information in The Hive Platform",
+                "tooltip": "Specify the ID of the observable for which you want to update an observable information in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Bulk Update": [
+              {
+                "title": "Observable IDs",
+                "name": "observable_ids",
+                "type": "text",
+                "description": "Specify the IDs of the observable you want to update in bulk.",
+                "tooltip": "Specify the IDs of the observable you want to update in bulk.",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "Data Type",
+          "name": "dataType",
+          "type": "select",
+          "description": "Select the input type for creating an observable. You can choose either 'Create Observable using Attachment' or 'Create Observable using Plain Text.'",
+          "tooltip": "Select the input type for creating an observable. You can choose either 'Create Observable using Attachment' or 'Create Observable using Plain Text.'",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "options": [
+            "Autonomous-System",
+            "Domain",
+            "File",
+            "FQDN",
+            "Hash",
+            "IP",
+            "Mail",
+            "Mail_Subject",
+            "Other",
+            "Regexp",
+            "Registry",
+            "Uri_Path",
+            "URL",
+            "User-Agent"
+          ]
+        },
+        {
+          "title": "Message",
+          "name": "message",
+          "type": "text",
+          "description": "Specify the message of the observable you want to update for alert in TheHive Platform",
+          "tooltip": "Specify the message of the observable you want to update for alert in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Add Tags",
+          "name": "addTags",
+          "type": "text",
+          "description": "Specify CSV list of tags will be added to the current observable.",
+          "tooltip": "Specify CSV list of tags will be added to the current observable.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Remove Tags",
+          "name": "removeTags",
+          "type": "text",
+          "description": "Specify CSV list tags will be removed from the current observable",
+          "tooltip": "Specify CSV list of tags will be removed from the current observable",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "TLP",
+          "name": "ignoreSimilarity",
+          "type": "checkbox",
+          "description": "Specify the TLP of the observable you want to update.",
+          "tooltip": "Specify the TLP of the observable you want to update.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "tooltip": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": ""
+    },
+    {
+      "title": "Delete Observable",
+      "operation": "delete_observable",
+      "description": "Delete a specific observable from the TheHive platform based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "delete_observable",
+      "output_schema": {
+        "type": "",
+        "message": ""
+      },
+      "parameters": [
+        {
+          "title": "Observable ID",
+          "name": "observableId",
+          "type": "text",
+          "description": "Specify the ID of the observable from which you want to retrieve information from TheHive Platform.",
+          "tooltip": "Specify the ID of the observable from which you want to retrieve information from TheHive Platform.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Create Task in Case",
+      "operation": "create_task",
+      "description": "Creates a task in the in TheHive based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "create_task",
+      "output_schema": {
+        "_id": "",
+        "_type": "",
+        "_createdBy": "",
+        "_updatedBy": "",
+        "_createdAt": "",
+        "_updatedAt": "",
+        "title": "",
+        "group": "",
+        "description": "",
+        "status": "",
+        "flag": "",
+        "startDate": "",
+        "endDate": "",
+        "assignee": "",
+        "order": "",
+        "dueDate": "",
+        "mandatory": "",
+        "extraData": {}
+      },
+      "parameters": [
+        {
+          "title": "Case ID",
+          "name": "caseId",
+          "type": "text",
+          "description": "Specify the ID of the case in which you want to create task in TheHive Platform",
+          "tooltip": "Specify the ID of the case in which you want to create task in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "text",
+          "description": "Specify the title of the task you want to create in TheHive Platform",
+          "tooltip": "Specify the title of the task you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "Specify the description of the task you want to create in TheHive Platform",
+          "tooltip": "Specify the description of the task you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Status",
+          "name": "status",
+          "type": "text",
+          "description": "Specify the status of the task you want to create in TheHive Platform",
+          "tooltip": "Specify the status of the task you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Group",
+          "name": "group",
+          "type": "text",
+          "description": "Specify the group of the task you want to create in TheHive Platform",
+          "tooltip": "Specify the group of the task you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Assignee",
+          "name": "assignee",
+          "type": "text",
+          "description": "Specify the assignee of the task you want to create in TheHive Platform",
+          "tooltip": "Specify the assignee of the task you want to create in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "tooltip": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Get Task",
+      "operation": "get_task",
+      "description": "Retrieves information about a specific task from The Hive platform based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "get_task",
+      "output_schema": {
+        "_id": "",
+        "_type": "",
+        "_createdBy": "",
+        "_updatedBy": "",
+        "_createdAt": "",
+        "_updatedAt": "",
+        "title": "",
+        "group": "",
+        "description": "",
+        "status": "",
+        "flag": "",
+        "startDate": "",
+        "endDate": "",
+        "assignee": "",
+        "order": "",
+        "dueDate": "",
+        "mandatory": "",
+        "extraData": {}
+      },
+      "parameters": [
+        {
+          "title": "Task ID",
+          "name": "TaskID",
+          "type": "text",
+          "description": "Specify the ID of the task from which you want to retrieve information from TheHive Platform.",
+          "tooltip": "Specify the ID of the task from which you want to retrieve information from TheHive Platform.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Update Task",
+      "operation": "update_task",
+      "description": "Update the details of an existing task within The Hive platform.",
+      "category": "investigation",
+      "annotation": "update_task",
+      "output_schema": {
+        "type": "",
+        "message": ""
+      },
+      "parameters": [
+        {
+          "title": "Action Type",
+          "name": "action_type",
+          "type": "select",
+          "description": "Select the action type for updating task. You can choose either a single record update or a bulk update.",
+          "tooltip": "Select the action type for updating task. You can choose either a single record update or a bulk update.",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "options": [
+            "Single Record Update",
+            "Bulk Update"
+          ],
+          "onchange": {
+            "Single Record Update": [
+              {
+                "title": "Task ID",
+                "name": "taskID",
+                "type": "text",
+                "description": "Specify the ID of the task for which you want to update an task information in The Hive Platform",
+                "tooltip": "Specify the ID of the task for which you want to update an task information in The Hive Platform",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ],
+            "Bulk Update": [
+              {
+                "title": "Task IDs",
+                "name": "taskIDs",
+                "type": "text",
+                "description": "Specify the IDs of the task you want to update in bulk.",
+                "tooltip": "Specify the IDs of the task you want to update in bulk.",
+                "visible": true,
+                "editable": true,
+                "required": true
+              }
+            ]
+          }
+        },
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "text",
+          "description": "Specify the title of the task you want to update in TheHive Platform",
+          "tooltip": "Specify the title of the task you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "text",
+          "description": "Specify the description of the task you want to update in TheHive Platform",
+          "tooltip": "Specify the description of the task you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Status",
+          "name": "status",
+          "type": "text",
+          "description": "Specify the status of the task you want to update in TheHive Platform",
+          "tooltip": "Specify the status of the task you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Group",
+          "name": "group",
+          "type": "text",
+          "description": "Specify the group of the task you want to update in TheHive Platform",
+          "tooltip": "Specify the group of the task you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Assignee",
+          "name": "assignee",
+          "type": "text",
+          "description": "Specify the assignee of the task you want to update in TheHive Platform",
+          "tooltip": "Specify the assignee of the task you want to update in TheHive Platform",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Additional Field",
+          "name": "additional_field",
+          "type": "json",
+          "description": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "tooltip": "Specify the additional fields required for the use case. Provide the fields in JSON format.",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "enabled": ""
+    },
+    {
+      "title": "Delete Task",
+      "operation": "delete_task",
+      "description": "Delete a specific task from the TheHive platform based on the input parameters you have specified.",
+      "category": "investigation",
+      "annotation": "delete_task",
+      "output_schema": {
+        "type": "",
+        "message": ""
+      },
+      "parameters": [
+        {
+          "title": "Task ID",
+          "name": "taskID",
+          "type": "text",
+          "description": "Specify the ID of the task from which you want to delete from TheHive Platform.",
+          "tooltip": "Specify the ID of the task from which you want to delete from TheHive Platform.",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
