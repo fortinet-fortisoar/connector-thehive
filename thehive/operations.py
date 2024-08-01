@@ -70,12 +70,10 @@ class TheHive(object):
 def get_file_object(file_iri):
     if file_iri:
         file_metadata = download_file_from_cyops(file_iri)
-        logger.error("download_file_from_cyops: {}".format(file_metadata))
         file_path = file_metadata.get('cyops_file_path')
         filename = file_metadata.get('filename')
         fil_absolute_path = os.path.join('/tmp/', file_path)
         files_obj = {filename: open(fil_absolute_path, 'rb')}
-        logger.error("file Object : {}".format(files_obj))
         return filename, files_obj
 
 
@@ -85,18 +83,14 @@ def create_alert(config, params):
     observables = params.get('observables', [])
     additional_field = params.pop('additional_field', {})
     files = {}
-    logger.error("file_iri: {}".format(file_iri))
     if file_iri:
         filename, files_obj = get_file_object(file_iri)
-        logger.error("filename: {}".format(filename))
-        logger.error("files_obj: {}".format(files_obj))
         if filename and files_obj:
             observables.append({"dataType": "file", "attachment": filename})
             params['observables'] = observables
     if additional_field:
         params = {**params, **additional_field}
     params = {k: v for k, v in params.items() if v is not None and v != ''}
-    logger.error("API Payload: {}".format(params))
     files = {'_json': json.dumps(params), **files}
     return hive_obj.make_api_call('/api/v1/alert', files=files)
 
