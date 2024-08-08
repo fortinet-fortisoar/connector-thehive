@@ -283,8 +283,8 @@ The output contains the following populated JSON schema:
 }</pre>
 ### operation: Get Alert Attachment
 #### Input parameters
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Alert ID</td><td>Specify the ID of the alert which you want to retrieve attachment.
-</td></tr><tr><td>Attachment ID</td><td>Specify the ID of the attachment for which you want to retrieve information.
+<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Alert ID</td><td>Specify the ID of the alert from which you want to retrieve attachment.
+</td></tr><tr><td>Attachment ID</td><td>Specify the ID of the attachment of which you want to retrieve information.
 </td></tr></tbody></table>
 
 #### Output
@@ -299,6 +299,7 @@ The output contains the following populated JSON schema:
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Alert ID</td><td>Specify the ID of the alert from which you want to delete an attachment.
 </td></tr><tr><td>Attachment ID</td><td>Specify the ID of the attachment you want to delete.
 </td></tr></tbody></table>
+
 #### Output
 The output contains the following populated JSON schema:
 

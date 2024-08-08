@@ -571,8 +571,8 @@
           "title": "Alert ID",
           "name": "alertID",
           "type": "text",
-          "description": "Specify the ID of the alert which you want to retrieve attachment.",
-          "tooltip": "Specify the ID of the alert which you want to retrieve attachment.",
+          "description": "Specify the ID of the alert from which you want to retrieve attachment.",
+          "tooltip": "Specify the ID of the alert from which you want to retrieve attachment.",
           "visible": true,
           "editable": true,
           "required": true
@@ -581,8 +581,8 @@
           "title": "Attachment ID",
           "name": "attachmentId",
           "type": "text",
-          "description": "Specify the ID of the attachment for which you want to retrieve information.",
-          "tooltip": "Specify the ID of the attachment for which you want to retrieve information.",
+          "description": "Specify the ID of the attachment of which you want to retrieve information.",
+          "tooltip": "Specify the ID of the attachment of which you want to retrieve information.",
           "visible": true,
           "editable": true,
           "required": true
